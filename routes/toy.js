@@ -59,12 +59,6 @@ router.post('/search', async (req, res) => {
    var toy = await ToyModel.find({ name_toy: new RegExp(keyword, "i") });
    res.render('toy/index', { toy: toy });
 })
-router.post('/custumer/search', async (req, res) => {
-   var keyword = req.body.name_toy;
-   //relative search
-   var toy = await ToyModel.find({ name_toy: new RegExp(keyword, "i") });
-   res.render('custumer/index', { toy: toy });
-})
 
 router.get('/nameasc', async (req, res) => {
    //1: ascending,  -1: descending

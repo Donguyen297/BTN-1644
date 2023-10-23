@@ -15,4 +15,10 @@ router.get('/detail/:id', async (req, res) => {
   var toy = await ToyModel.findById(id);
   res.render('custumer/detail', { toy: toy });
 })
+router.post('/search', async (req, res) => {
+  var keyword = req.body.name_toy;
+  //relative search
+  var toy = await ToyModel.find({ name_toy: new RegExp(keyword, "i") });
+  res.render('custumer/index', { toy: toy });
+})
 module.exports = router;
