@@ -65,6 +65,6 @@ app.use(function (err, req, res, next) {
 });
 
 // cấu hình port của server để deploy lên cloud
-app.listen(process.env.PORT || 4000);
+app.listen(process.env.PORT || 35166);
 
 module.exports = app;
