@@ -1,0 +1,124 @@
+<form action="/toy/edit/{{ toy._id }}" method="post">
+   <h1 class="text-danger text-uppercase text-center mt-3">Edit toy</h1>
+   <div style="margin-top: 10px;">
+      <label for="name" class="text-primary">Name</label>
+      <input class="form-control" type="text" name="name_toy" value="{{ toy.name_toy}}" readonly>
+   </div>
+   <div style="margin-top: 10px;">
+      <label for="price" class="text-primary">price</label>
+      <input class="form-control" type="number" name="dob" id="" value="{{ toy.price }}">
+   </div>
+   <div style="margin-top: 10px;">
+      <label for="category" class="text-primary">category</label>
+      <input class="form-control" type="text" name="category" min="0" max="10" value="{{ toy.category }}">
+   </div>
+   <div style="margin-top: 10px;">
+      <label for="image" class="text-primary">Image</label>
+      <img src="{{ toy.image }}" style="margin-left: 20px;width: 300px ;height:300px">
+      <br><br>
+      <input class="form-control" type="url" name="image" value="{{ toy.image }}">
+   </div>
+   <div class="form-group  mb-3 text-center" style="margin-top: 50px;">
+      <input class="btn btn-warning" type="submit" value="Edit">
+      <input style="margin-top: 10px;" class="btn btn-danger" type="reset" value="Clear">
+   </div>
+</form>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+   $(() => {
+      $('.form-group').each((i, e) => {
+         $('.form-control', e).
+            focus(function () {
+               e.classList.add('not-empty');
+            }).
+            blur(function () {
+               this.value === '' ? e.classList.remove('not-empty') : null;
+            });
+      });
+   });
+</script>
+<style>
+   @import 'https://fonts.googleapis.com/css?family=Libre+Franklin:100,300,400,600,700,900';
+
+   /* -----------------------
+  Presentational stuff 
+----------------------- */
+   body {
+      font-family: 'Libre Franklin', sans-serif;
+      background: #111922;
+   }
+
+   h1 {
+      font-weight: 900;
+   }
+
+   @media (min-width: 1200px) {
+      h1 {
+         font-size: 60px;
+      }
+   }
+
+   /* -----------------------
+  Form 
+----------------------- */
+   .form-control {
+      border-radius: 0;
+   }
+
+   .form-control:focus {
+      box-shadow: none;
+   }
+
+   .form-group {
+      position: relative;
+      margin-bottom: 25px;
+   }
+
+   .form-group>label {
+      text-transform: uppercase;
+      font-size: 10px;
+      color: #a1a2a3;
+      transform-origin: 0 0;
+      transform: scale(1.4);
+      pointer-events: none;
+      position: relative;
+      z-index: 5;
+   }
+
+   .form-group>input {
+      width: 100%;
+   }
+
+   .form-group>label {
+      transition: transform 0.4s;
+      transform-origin: 0 0;
+      transform: scale(1.4) translateY(20px);
+   }
+
+   .form-group.not-empty>label {
+      transform: none;
+   }
+
+   /*------------------------------
+	Form
+------------------------------*/
+   .form-control {
+      border: 0;
+      border-bottom: 1px solid #a1a2a3;
+   }
+
+   .form-control,
+   .form-control:focus,
+   .form-control:focus:hover {
+      color: #ff8d00;
+      background: none;
+      outline: none;
+   }
+
+   .form-control:focus,
+   .form-control:focus:hover {
+      border-bottom: 1px solid #ff8d00;
+   }
+</style>

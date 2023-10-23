@@ -1,0 +1,24 @@
+<div class="container col-md-10">
+   <div class="row">
+      <div class="col-md-5">
+         <img src="{{toy.image}}" width="auto" height="auto" alt="this is toy image">
+      </div>
+      <div class="col-md-7 card bg-warning">
+         <h1 class="text-center">Thông tin đồ chơi</h1>
+         <h3>Tên đồ chơi: {{ toy.name_toy }}</h3>
+         <h3>Giá: {{ toy.price }} </h3>
+         <h3>Category: {{ toy.category}}</h3>
+         {{!-- <h3>Ảnh: {{ toy.image }}</h3> --}}
+      </div>
+      <div class="form-group  mb-3 text-center" style="margin-top: 50px;">
+         <input class="btn btn-info" type="number" style="width: 100px;margin-left: 30px;" placeholder="Số lượng">
+         <input class="btn btn-warning" type="submit" value="Buy">
+         <button class="btn btn-danger" type="reset" value="Cancle"><a style=" text-decoration: none;" href="/toy">Cancle</a></button>
+      </div>
+   </div>
+</div>
+<style>
+a:visited {
+  color: black;
+}
+</style>
