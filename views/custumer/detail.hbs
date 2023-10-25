@@ -32,9 +32,9 @@
    function buy() {
       let count = document.getElementById("count_product").value
       if (count === '') {
-         return alert(`Vui lòng nhập số lượng sản phẩm`)
+         return alert(`Please enter product quantity`)
       }
-      if(confirm(`Bạn có chắc muốn mua ${count} sản phẩm không`) ===true){
+      if(confirm(`Are you sure you want to buy ${count} products`) ===true){
          window.location.replace('/custumer')
       }
    }
