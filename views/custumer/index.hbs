@@ -54,6 +54,23 @@
             </div>
             {{/each}}
          </div>
+         <div class="item-list">
+            {{#each car}}
+            <div class="item">
+               <div class="item-img">
+                  <a href="/custumer/detailcar/{{ _id }}">
+                     <img src="{{image}}">
+                  </a>
+               </div>
+               <div class="item-detail">
+                  <a class="item-name">{{ name_car }}</a>
+                  <div class="item-price">
+                     <span class="new-price">{{Brand}}</span>
+                  </div>
+               </div>
+            </div>
+            {{/each}}
+         </div>
       </div>
    </div>
 </body>

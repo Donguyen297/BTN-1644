@@ -13,5 +13,5 @@ var toychema = mongoose.Schema(
       image: String
    }
 );
-var ToyModel = mongoose.model('toy', toychema, 'toy');
-module.exports = ToyModel;
+var toyModel = mongoose.model('toy', toychema, 'toy');
+module.exports = toyModel;

@@ -10,20 +10,20 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-               <a class="nav-link active" aria-current="page" href="/toy/">Home</a>
+               <a class="nav-link active" aria-current="page" href="/car/">Home</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="/car/">Car store</a>
+               <a class="nav-link" href="/car/add">Add</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="/toy/add">Add</a>
+               <a class="nav-link" href="/toy/">Toy store</a>
             </li>
             <li class="nav-item">
                <a class="nav-link" href="/custumer/" tabindex="-1">Custumer view</a>
             </li>
          </ul>
-         <form action="/toy/search" method="post" class="d-flex">
-            <input class="form-control" type="search" placeholder="Search by toy's name" name="name_toy" id="" required>
+         <form action="/car/search" method="post" class="d-flex">
+            <input class="form-control" type="search" placeholder="Search by car's name" name="name_car" id="" required>
             <button class="btn btn-outline-success" type="submit">Search</button>
          </form>
       </div>
@@ -35,33 +35,37 @@
          <thead>
             <tr>
                <th colspan="4" class="h1 text-uppercase text-success">
-                  ATN toy store
+                  ATN car store
                </th>
             </tr>
          </thead>
          <thead class="table-dark">
             <tr>
                <th>Name</th>
-               <th>Price</th>
-               <th>Category</th>
+               <th>Color</th>
+               <th>Brand</th>
                <th>Image</th>
+               <th>YOM</th>
                <th>Menu</th>
             </tr>
          </thead>
-         {{#each toy }}
+         {{#each car }}
          <tr>
-            <td>{{ name_toy }}</td>
-            <td>{{ price }}$</td>
-            <td>{{ category}}</td>
+            <td>{{ name_car }}</td>
+            <td>{{ Color }}</td>
+            <td>{{ Brand}}</td>
             <td>
-               <a href="/toy/detail/{{ _id }}">
+               <a href="/car/detail/{{ _id }}">
                   <img src="{{ image }}" style="width: 150px;height: 150px;" >
                </a>
             </td>
             <td>
-               <a class="btn btn-warning" href="/toy/edit/{{ _id }}">Edit</a>
-               <a class="btn btn-danger" href="/toy/delete/{{ _id }}"
-                  onclick="return confirm('Are you sure to delete this toy ?');">Delete</a>
+               {{ yom }}
+            </td>
+            <td>
+               <a class="btn btn-warning" href="/car/edit/{{ _id }}">Edit</a>
+               <a class="btn btn-danger" href="/car/delete/{{ _id }}"
+                  onclick="return confirm('Are you sure to delete this car ?');">Delete</a>
             </td>
          </tr>
          {{/each}}

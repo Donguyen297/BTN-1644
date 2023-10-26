@@ -1,21 +1,32 @@
 <div class="container mt-5">
    <div class="row">
       <div class="col-md-5 d-flex align-items-center">
-         <h1>ADD NEW TOY</h1>
+         <h1>ADD NEW CAR</h1>
       </div>
       <div class="col-md-6 offset-md-1">
-         <form action="/toy/add" method="post" class="mt-4 mt-md-0">
+         <form action="/car/add" method="post" class="mt-4 mt-md-0">
             <div class="form-group">
-               <label for="name">Name</label>
-               <input class="form-control" type="text" name="name_toy" minlength="3" maxlength="30">
+               <label for="name">Name car</label>
+               <input class="form-control" type="text" name="name_car">
             </div>
             <div class="form-group">
-               <label for="price">price</label>
-               <input class="form-control" type="number" name="price">
+               <label for="Color">Color</label>
+               <input class="form-control" type="color" name="Color">
             </div>
             <div class="form-group">
-               <label for="category">category</label>
-               <input class="form-control" type="text" name="category">
+               <label for="Brand">Brand</label>
+               {{!-- <select name="Brand" class="form-select">
+                  <option selected></option>
+                  <option value="mecedes">Mecedes</option>
+                  <option value="toyota">Toyota</option>
+                  <option value="kia">Kia</option>
+                  <option value="huyndai">Huyndai</option>
+               </select> --}}
+               <input class="form-control" type="text" name="Brand">
+            </div>
+            <div class="form-group">
+               <label for="yom">YOM</label>
+               <input class="form-control" type="date" name="yom">
             </div>
             <div class="form-group">
                <label for="image">Image</label>
@@ -54,7 +65,7 @@
 ----------------------- */
    body {
       font-family: 'Libre Franklin', sans-serif;
-      background: #111922;
+      background: #ffffff;
    }
 
    h1 {

@@ -1,35 +1,41 @@
-<div class="container mt-5">
-   <div class="row">
-      <div class="col-md-5 d-flex align-items-center">
-         <h1>ADD NEW TOY</h1>
-      </div>
-      <div class="col-md-6 offset-md-1">
-         <form action="/toy/add" method="post" class="mt-4 mt-md-0">
-            <div class="form-group">
-               <label for="name">Name</label>
-               <input class="form-control" type="text" name="name_toy" minlength="3" maxlength="30">
-            </div>
-            <div class="form-group">
-               <label for="price">price</label>
-               <input class="form-control" type="number" name="price">
-            </div>
-            <div class="form-group">
-               <label for="category">category</label>
-               <input class="form-control" type="text" name="category">
-            </div>
-            <div class="form-group">
-               <label for="image">Image</label>
-               <input class="form-control" type="url" name="image">
-            </div>
-            <div class="form-groupr">
-               <input class="btn btn-warning" type="submit" value="Add">
-               <input class="btn btn-danger" type="reset" value="Clear">
-            </div>
-
-         </form>
-      </div>
+<form action="/car/edit/{{ car._id }}" method="post">
+   <h1 class="text-danger text-uppercase text-center mt-3">Edit car</h1>
+   <div style="margin-top: 10px;">
+      <label for="name" class="text-primary">Name</label>
+      <input class="form-control" type="text" name="name_car" value="{{ car.name_car}}" readonly>
    </div>
-</div>
+   <div style="margin-top: 10px;">
+      <label for="Color" class="text-primary">Color</label>
+      <input class="form-control" type="color" name="dob" id="" value="{{ car.Color }}">
+   </div>
+   <div style="margin-top: 10px;">
+      <label for="Brand" class="text-primary">Brand</label>
+      {{!-- <select name="Brand" value="{{ car.Brand }}" class="form-select">
+                  <option selected></option>
+                  <option value="mecedes">Mecedes</option>
+                  <option value="toyota">Toyota</option>
+                  <option value="kia">Kia</option>
+                  <option value="huyndai">Huyndai</option>
+               </select> --}}
+      <input class="form-control" type="text" name="Brand" value="{{ car.Brand }}">
+   </div>
+   <div style="margin-top: 10px;">
+      <label for="yom" class="text-primary">YOM</label>
+      <input class="form-control" type="date" name="yom" id="" value="{{ car.yom }}">
+   </div>
+   <div style="margin-top: 10px;">
+      <label for="image" class="text-primary">Image</label>
+      <img src="{{ car.image }}" style="margin-left: 20px;width: 300px ;height:300px">
+      <br><br>
+      <input class="form-control" type="url" name="image" value="{{ car.image }}">
+   </div>
+   <div class="form-group  mb-3 text-center" style="margin-top: 50px;">
+      <input class="btn btn-warning" type="submit" value="Edit">
+      <input style="margin-top: 10px;" class="btn btn-danger" type="reset" value="Clear">
+   </div>
+</form>
+
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
    $(() => {
@@ -41,9 +47,7 @@
             blur(function () {
                this.value === '' ? e.classList.remove('not-empty') : null;
             });
-
       });
-
    });
 </script>
 <style>
@@ -54,12 +58,11 @@
 ----------------------- */
    body {
       font-family: 'Libre Franklin', sans-serif;
-      background: #111922;
+      background: #ffffff;
    }
 
    h1 {
       font-weight: 900;
-      color: #ff8d00;
    }
 
    @media (min-width: 1200px) {

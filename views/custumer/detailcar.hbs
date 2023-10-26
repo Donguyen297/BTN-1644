@@ -1,0 +1,42 @@
+<div class="container col-md-10">
+   <div class="row">
+      <div class="col-md-5">
+         <img src="{{car.image}}" width="auto" height="auto" alt="this is car image">
+      </div>
+      <div class="col-md-7 card bg-warning">
+         <h1 class="text-center">Thông tin xe</h1>
+         <h3>Name car: {{ car.name_car }}</h3>
+         <h3>Color: <input readonly value="{{ car.Color }}" type="color"> </h3>
+         <h3>Brand: {{ car.Brand}}</h3>
+         <h3>YOM: {{ car.yom}}</h3>
+         {{!-- <h3>Ảnh: {{ car.image }}</h3> --}}
+      </div>
+      <div class="form-group  mb-3 text-center" style="margin-top: 50px;">
+         <input class="btn btn-info" id="count_product" type="number" style="width: 100px;margin-left: 30px;"
+            placeholder="quantity">
+         <input class="btn btn-warning" type="submit" value="Buy" onclick="buy()">
+         <button class="btn btn-danger" type="reset" value="Cancle"><a style=" text-decoration: none;"
+               href="/custumer">Cancle</a></button>
+      </div>
+   </div>
+</div>
+<style>
+   body {
+      font-family: 'Libre Franklin', sans-serif;
+      background: #111922;
+   }
+   a:visited {
+      color: black;
+   }
+</style>
+<script>
+   function buy() {
+      let count = document.getElementById("count_product").value
+      if (count === '') {
+         return alert(`Please enter product quantity`)
+      }
+      if(confirm(`Are you sure you want to buy ${count} products`) ===true){
+         window.location.replace('/custumer')
+      }
+   }
+</script>
